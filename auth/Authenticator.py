@@ -32,6 +32,7 @@ class Authenticator:
         auth_value = as_data(auth_info, value)
         if auth_value is None or len(auth_value) == 0:
             raise UnableToAuthenticateError(f'AUTH_INFO does not contain {value}')
+        return auth_value
 
     def get_timestamp(self):
         return int(time.time() * 1000)
