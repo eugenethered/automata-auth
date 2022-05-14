@@ -1,8 +1,8 @@
 from coreutility.collection.dictionary_utility import as_data
 
-from auth.exception.AuthenticatorError import AuthenticatorError
-from auth.exception.UnableToAuthenticateError import UnableToAuthenticateError
-from auth.repository.AuthRepository import AuthRepository
+from coreauth.exception.AuthenticatorError import AuthenticatorError
+from coreauth.exception.UnableToAuthenticateError import UnableToAuthenticateError
+from coreauth.repository.AuthRepository import AuthRepository
 
 AUTH_URL = 'AUTH_URL'
 

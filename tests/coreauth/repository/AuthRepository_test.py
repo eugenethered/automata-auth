@@ -2,7 +2,7 @@ import unittest
 
 from cache.holder.RedisCacheHolder import RedisCacheHolder
 
-from auth.repository.AuthRepository import AuthRepository
+from coreauth.repository.AuthRepository import AuthRepository
 
 
 class AuthRepositoryTestCase(unittest.TestCase):

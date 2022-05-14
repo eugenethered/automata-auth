@@ -1,6 +1,6 @@
 import unittest
 
-from auth.utility.auth_utilities import get_timestamp, sign_value_with_secret
+from coreauth.utility.auth_utilities import get_timestamp, sign_value_with_secret
 
 
 class AuthUtilitiesTestCase(unittest.TestCase):

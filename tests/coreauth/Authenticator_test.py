@@ -1,6 +1,6 @@
 import unittest
 
-from auth.exception.AuthenticatorError import AuthenticatorError
+from coreauth.exception.AuthenticatorError import AuthenticatorError
 from tests.helper.AuthenticatorHelper import AuthenticatorHelper
 
 
