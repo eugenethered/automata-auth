@@ -1,8 +1,4 @@
-import hashlib
-import hmac
-import time
-
-from utility.json_utility import as_data
+from coreutility.collection.dictionary_utility import as_data
 
 from auth.exception.UnableToAuthenticateError import UnableToAuthenticateError
 from auth.repository.AuthRepository import AuthRepository
@@ -16,7 +12,8 @@ class Authenticator:
         self.auth_url = options[AUTH_URL]
         self.repository = AuthRepository(options)
 
-    def should_update_url(self) -> bool:
+    @staticmethod
+    def should_update_url() -> bool:
         return False
 
     def update_url(self, url) -> str:
@@ -33,9 +30,3 @@ class Authenticator:
         if auth_value is None or len(auth_value) == 0:
             raise UnableToAuthenticateError(f'AUTH_INFO does not contain {value}')
         return auth_value
-
-    def get_timestamp(self):
-        return int(time.time() * 1000)
-
-    def sign_secret_value(self, secret, value):
-        return hmac.new(secret.encode(), value.encode(), hashlib.sha256).hexdigest()
