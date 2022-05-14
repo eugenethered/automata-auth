@@ -1,5 +1,6 @@
 from coreutility.collection.dictionary_utility import as_data
 
+from auth.exception.AuthenticatorError import AuthenticatorError
 from auth.exception.UnableToAuthenticateError import UnableToAuthenticateError
 from auth.repository.AuthRepository import AuthRepository
 
@@ -12,13 +13,6 @@ class Authenticator:
         self.auth_url = options[AUTH_URL]
         self.repository = AuthRepository(options)
 
-    @staticmethod
-    def should_update_url() -> bool:
-        return False
-
-    def update_url(self, url) -> str:
-        pass
-
     def authenticate(self):
         pass
 
@@ -30,3 +24,10 @@ class Authenticator:
         if auth_value is None or len(auth_value) == 0:
             raise UnableToAuthenticateError(f'AUTH_INFO does not contain {value}')
         return auth_value
+
+    @staticmethod
+    def should_update_url() -> bool:
+        return False
+
+    def update_url(self, url) -> str:
+        raise AuthenticatorError('Update URL needs to be implemented')
