@@ -13,7 +13,13 @@ class Authenticator:
         self.auth_url = options[AUTH_URL]
         self.repository = AuthRepository(options)
 
-    def authenticate(self):
+    def logon(self):
+        pass
+
+    def logoff(self):
+        pass
+
+    def refresh(self):
         pass
 
     def obtain_auth_value(self, value):
