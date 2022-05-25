@@ -1,6 +1,6 @@
 import unittest
 
-from coreauth.exception.AuthenticatorError import AuthenticatorError
+from coreauth.exception.UnableToAuthenticateError import UnableToAuthenticateError
 from tests.helper.AuthenticatorHelper import AuthenticatorHelper
 
 
@@ -23,7 +23,7 @@ class AuthenticatorTestCase(unittest.TestCase):
     def test_should_raise_exception_when_update_url_has_not_been_set_and_should_update_url_indicated(self):
         should_update = self.authenticator.should_update_url()
         self.assertTrue(should_update)
-        with self.assertRaises(AuthenticatorError):
+        with self.assertRaises(UnableToAuthenticateError):
             self.authenticator.update_url('some-url')
 
     def test_should_update_url(self):

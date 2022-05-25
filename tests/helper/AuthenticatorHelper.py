@@ -1,3 +1,5 @@
+import logging
+
 from coreauth.Authenticator import Authenticator, AUTH_URL
 from coreauth.repository.AuthRepository import AuthRepository
 
@@ -5,6 +7,7 @@ from coreauth.repository.AuthRepository import AuthRepository
 class AuthenticatorHelper(Authenticator):
 
     def __init__(self, options):
+        self.log = logging.getLogger(__name__)
         self.auth_url = options[AUTH_URL]
         self.repository = AuthRepositoryHelper()
 
